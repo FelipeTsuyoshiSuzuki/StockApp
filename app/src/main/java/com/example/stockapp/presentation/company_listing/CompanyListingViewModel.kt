@@ -14,12 +14,16 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class CompanyLIstingViewModel @Inject constructor(
+class CompanyListingViewModel @Inject constructor(
     private val repository: StockRepository
 ): ViewModel() {
 
     var state by mutableStateOf(CompanyListingStates())
     private var searchJob: Job? = null
+
+    init {
+        getCompanyListing()
+    }
 
     fun onEvent(event: CompanyListingEvents) {
         when(event) {
