@@ -15,7 +15,7 @@ class MockWebServerDispatcher {
                     .setBody(MockResponseReader("listing_status_response_success.csv").content)
                 "/query?function=TIME_SERIES_INTRADAY&interval=60min&datatype=csv&symbol=IBM&apikey=${StockApi.API_KEY}" ->
                     MockResponse().setResponseCode(200)
-                        .setBody(MockResponseReader("intraday_info.response_success.csv").content)
+                        .setBody(MockResponseReader("intraday_info_response_success.csv").content)
                 "/query?function=OVERVIEW&symbol=IBM&apikey=${StockApi.API_KEY}" ->
                     MockResponse().setResponseCode(200)
                         .setBody(MockResponseReader("company_info_response_success.json").content)

@@ -17,6 +17,7 @@ class StockApiTest {
     @Before
     fun setup() {
         server = MockWebServer()
+        server.start()
         api = Retrofit.Builder()
             .baseUrl(server.url("/"))
             .client(client)
